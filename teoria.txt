@@ -1,0 +1,11 @@
+El Schema es la base de una API en GraphQL, es el encargado de describir todos los tipos de información que va a contener.
+
+https://graphql.org/
+
+inicializar un proyecto
+$ npx license mit > LICENSE && npx gitignore node && git init && npm init -y
+
+instalar graphql
+$ npm i graphql
+
+$ npm i express express-graphql
