@@ -9,3 +9,14 @@ instalar graphql
 $ npm i graphql
 
 $ npm i express express-graphql
+
+los custom types son para definir un tipo de dato a devolver con su estructura
+
+herramienta 
+$ npm i graphql-tools
+
+para encriptar datos 
+$ npm i dotenv
+
+instalar mongo
+$ npm i mongo

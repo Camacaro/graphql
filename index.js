@@ -1,6 +1,11 @@
 'use strict';
 
-const { buildSchema } = require('graphql');
+// esta sentencia lo que hace es buscar el archivo .env
+// y carga las variables como entorno de desarrollo
+require('dotenv').config();
+
+const { makeExecutableSchema } = require('graphql-tools');
+// const { buildSchema } = require('graphql');
 const express = require('express');
 const gqlMiddleware = require('express-graphql');
 const { readFileSync } = require('fs');
@@ -13,12 +18,20 @@ const port = process.env.port || 3000;
 
 // definimos un schema 
 // Integer, boolean, String, floaHola Mundot
-const schema = buildSchema( 
-    readFileSync( 
-        join(__dirname, 'lib', 'schema.graphql'),
-        'utf-8'
-    ) 
+// const schema = buildSchema( 
+//     readFileSync( 
+//         join(__dirname, 'lib', 'schema.graphql'),
+//         'utf-8'
+//     ) 
+// );
+
+const typeDefs = readFileSync( 
+    join(__dirname, 'lib', 'schema.graphql'),
+    'utf-8'
 );
+
+const schema = makeExecutableSchema({typeDefs, resolvers});
+
 
 app.use('/api', gqlMiddleware({
     schema,

@@ -1,4 +1,16 @@
+# Custom types 
+type Course {
+    _id: ID!
+    title: String!
+    teacher: String!
+    description: String!
+    topic: String
+}
+
 type Query {
-    hello: String
-    saludo: String
+    "Devuelve todos los cursos"
+    getCourses: [Course]
+    "Devuelve un curso"
+    #pasando parametros a la funcion el ! es para asignarlo obligatorio
+    getCourse( id: ID!): Course
 }
