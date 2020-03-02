@@ -18,7 +18,8 @@
     "graphql": "^14.6.0",
     "graphql-tools": "^4.0.7",
     "mongo": "^0.1.0",
-    "mongodb": "^3.5.4"
+    "mongodb": "^3.5.4",
+    "mongoose": "^5.9.2"
   },
   "devDependencies": {
     "standard": "^14.3.1"
