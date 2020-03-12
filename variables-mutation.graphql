@@ -1,0 +1,13 @@
+
+mutation AddPersonToCourse2 ( $course: ID!, $person: ID! ){
+  addPeople( courseID: $course, personID: $person ){
+    _id
+    title
+  }
+}
+
+# seccion query variables or  GRAPHQL VARIABLES
+{
+  "course": "5e6a3e554fe7f92fd721d675",
+  "person": "5e6a77b60cad2a74fa4b2050"
+}

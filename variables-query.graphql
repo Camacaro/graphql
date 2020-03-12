@@ -1,0 +1,15 @@
+query GetCourse2 ( $course: ID!) {
+  getCourse( id: $course ){
+    _id
+    title
+    people {
+      _id
+      name
+    }
+  }
+}
+
+# seccion query variables or  GRAPHQL VARIABLES
+{
+  "course": "5e6a3e554fe7f92fd721d675"
+}
