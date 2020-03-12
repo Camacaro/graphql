@@ -20,3 +20,107 @@ $ npm i dotenv
 
 instalar mongo
 $ npm i mongo
+
+Mutation
+Ya hemos visto cómo consultar información mediante GraphQL, pero en un API también vas a necesitar mandar información para que sea almacenada, dentro de GraphQL esto es posible gracias a la especificación mutation.
+Un mutation va a requerir de un campo de tipo Input que son como plantillas que le van a indicar qué campos son necesarios para insertar o modificar información.
+La sintaxis de una mutation queda de la siguiente manera:
+nombreMutation(input: InputType): tipo
+la mutacion siempre transforma los datos dentro de una API
+
+Nested Types
+es la creacion de un tipo dentro de otro tipo, insertar un id en otra tabla
+
+types
+nos permiten modificar los campos de nuestros type dentro del schema 
+
+Alies, nos permite ponerle un nombre a las funciones que yo requiera 
+{
+  AllCourse: getCourses {
+    _id
+    title
+  }
+  
+  Course1: getCourse( id: "5e5845007c213e6737403fbe"){
+    _id
+    title
+    description
+  }
+  
+  Course2: getCourse( id: "5e5845007c213e6737403fbe"){
+    topic
+    title
+    description
+  }
+}
+
+
+Fragment, nos sirve para poner general campos que requiera las funciones 
+{
+  AllCourse: getCourses {
+    ...CourseFields
+  }
+  
+  Course1: getCourse( id: "5e5845007c213e6737403fbe"){
+    ...CourseFields
+    teacher
+  }
+  
+  Course2: getCourse( id: "5e5845007c213e6737403fbe"){
+    ...CourseFields
+    topic
+  }
+}
+
+fragment CourseFields on Course {
+  _id
+  title
+  description
+  people {
+  	_id
+  	name
+  }
+}
+
+
+
+Example en la web
+mutation {
+  createCourse(input: {
+    title: "Curso de Ejemplo 4",
+    description: "descripcion 4",
+    topic: "diseño"
+  }){
+    _id
+    title
+    description
+  }
+}
+
+mutation {
+  createStudent(input: {
+    name: "Estudiante 1"
+    email: "estudiate@email.com"
+  }) {
+    _id
+    name
+    email
+  }
+}
+
+mutation {
+  editCourse ( _id: "5e5844f17c213e6737403fb4", input: {
+    title: "Mi titulo 1"
+  } ){
+    _id
+    title
+  }
+}
+
+
+{
+  getCourses {
+    _id
+    title
+  }
+}
