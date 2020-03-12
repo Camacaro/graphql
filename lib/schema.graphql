@@ -16,10 +16,24 @@ type Course {
     level: Level
 }
 
-type Student {
+interface Person {
     _id: ID!
     name: String!
     email: String!
+}
+
+type Student implements Person {
+    _id: ID!
+    name: String!
+    email: String!
+    avatar: String
+}
+
+type Monitor implements Person {
+    _id: ID!
+    name: String!
+    email: String!
+    phone: String
 }
 
 type Query {
@@ -30,9 +44,12 @@ type Query {
     getCourse( id: ID!): Course
 
     "Devuelve todos los estudiantes"
-    getStudents: [Student]
+    #getStudents: [Student]
+    getPeople: [Person]
+
     "Devuelve un estudiante"
-    getStudent ( id: ID!): Student
+    #getStudent ( id: ID!): Student
+    getPerson ( id: ID!): Person
 }
 
 input CourseInput {
@@ -60,6 +77,20 @@ input StudentEditInput {
     email: String
 }
 
+input PersonInput {
+    name: String!
+    email: String!
+    phone: String
+    avatar: String
+}
+
+input PersonEditInput {
+    name: String
+    email: String
+    phone: String
+    avatar: String
+}
+
 # nos permite insertar informacio desde la api rest , obtener los datos
 type Mutation {
     "crea un curso"
@@ -68,11 +99,15 @@ type Mutation {
     "Edita un curso"
     editCourse( _id: ID!, input: CourseEditInput): Course
 
-    "crea un studiante"
-    createStudent( input: StudentInput! ): Student
+    #"crea un studiante"
+    #createStudent( input: StudentInput! ): Student
+    "crea un persona"
+    createPerson( input: PersonInput! ): Person
 
-    "Edita un studiante"
-    editStudent( _id: ID!, input: StudentEditInput ): Student
+    #"Edita un studiante"
+    #editStudent( _id: ID!, input: StudentEditInput ): Student
+    "Edita un persona"
+    editPerson( _id: ID!, input: PersonEditInput ): Person
 
     "Eliminar un curso"
     deleteCourse( _id: ID! ): String

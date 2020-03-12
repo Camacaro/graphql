@@ -72,6 +72,12 @@ Fragment, nos sirve para poner general campos que requiera las funciones
   }
 }
 
+
+otro tipo de type es el emun que son valores predeterminado que debe llevar un campo
+
+
+
+
 fragment CourseFields on Course {
   _id
   title
