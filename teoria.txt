@@ -75,8 +75,12 @@ Fragment, nos sirve para poner general campos que requiera las funciones
 
 otro tipo de type es el emun que son valores predeterminado que debe llevar un campo
 
-las interaces nos sirven para diferenciar diferentes objetos y utilizar el 
+interaces 
+nos sirven para diferenciar diferentes objetos y utilizar el 
 fragment para separarlos
+Las interfaces son muy importantes y útiles cuando nos encontramos con
+tipos de datos similares. Una interfaz nos permite definir un tipo de dato padre que 
+utilizando la palabra implements va a implementar los campos que tenga definidos dentro del tipo de dato que queramos.
 
 directivas
 nos sirven para poner condiciones en la consulta.
@@ -148,3 +152,11 @@ mutation {
     title
   }
 }
+
+
+Especificaciones de graphql (junio 2018)
+
+sintaxis para definir argumentos para un query
+nombreQuery(campo: tipo): tipo
+
+
