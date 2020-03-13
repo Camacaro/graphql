@@ -75,7 +75,13 @@ Fragment, nos sirve para poner general campos que requiera las funciones
 
 otro tipo de type es el emun que son valores predeterminado que debe llevar un campo
 
+las interaces nos sirven para diferenciar diferentes objetos y utilizar el 
+fragment para separarlos
 
+directivas
+nos sirven para poner condiciones en la consulta.
+tambein hay una opcion de agregar a los campos de los tipos @deprecated
+para avisar que esa varibale sera quitada en un futuro
 
 
 fragment CourseFields on Course {

@@ -11,7 +11,7 @@ type Course {
     title: String!
     teacher: String!
     description: String!
-    topic: String
+    topic: String @deprecated
     people: [Student]
     level: Level
 }
@@ -113,7 +113,8 @@ type Mutation {
     deleteCourse( _id: ID! ): String
 
     "Eliminar un estudiante"
-    deleteStudent( _id: ID! ): String
+    #deleteStudent
+    deletePerson( _id: ID! ): String
 
     "Agrega una persona a un curso"
     addPeople( courseID: ID!, personID: ID! ): Course
