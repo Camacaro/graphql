@@ -89,6 +89,13 @@ para se haga la busqueda es recomendable que los campos sean indices asi
 la busqueda sera mas rapida, ademas hay que usar un type (el archivo type) para devolver su type
 
 
+CLIENTES PARA GraphQL
+fetchql npm
+graphql-request npm (mas sencillo de usar)
+apollo client npm (es algo mas completo)
+Relay framework lo usa facebook para integrarlo con react
+apollo angular es su contraparte
+
 fragment CourseFields on Course {
   _id
   title
