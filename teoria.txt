@@ -83,6 +83,11 @@ nos sirven para poner condiciones en la consulta.
 tambein hay una opcion de agregar a los campos de los tipos @deprecated
 para avisar que esa varibale sera quitada en un futuro
 
+union
+es un tipo que nos sirve de busqueda para diferentes types dentro del schema
+para se haga la busqueda es recomendable que los campos sean indices asi
+la busqueda sera mas rapida, ademas hay que usar un type (el archivo type) para devolver su type
+
 
 fragment CourseFields on Course {
   _id
